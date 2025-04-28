@@ -25,30 +25,37 @@
 #### Решение:
 
    1. Разворачиваем машину:
+
 ![13-01](https://github.com/Qshar1408/13-01/blob/main/img/hw_13_01_001.png)
+
    2. Сканируем машину на предмет уязвимостей:
 
 ```bash
 nmap -sSV 192.168.2.143 # инфомация по открытым TCP портам (TCP SYN)
 ```
+![13-01](https://github.com/Qshar1408/13-01/blob/main/img/hw_13_01_002.png)
 
 ```bash
 nmap -sTV 192.168.2.143 # инфомация по открытым TCP портам (TCP Connect)
 ```
-
-```bash
-nmap -sAV 192.168.2.143 # инфомация по открытым TCP портам (TCP FIN)
-```
+![13-01](https://github.com/Qshar1408/13-01/blob/main/img/hw_13_01_003.png)
 
 ```bash
 nmap -sV 192.168.2.143 # инфомация по всем открытым TCP портам
 ```
+![13-01](https://github.com/Qshar1408/13-01/blob/main/img/hw_13_01_004.png)
 
 ```bash
 nmap -A 192.168.2.143 # агресивный режим - инфомация по всем открытым TCP портам
 ```
+![13-01](https://github.com/Qshar1408/13-01/blob/main/img/hw_13_01_005.png)
+![13-01](https://github.com/Qshar1408/13-01/blob/main/img/hw_13_01_006.png)
+![13-01](https://github.com/Qshar1408/13-01/blob/main/img/hw_13_01_007.png)
 
-
+   3. Описание уязвимостей:
+- vsftpd 2.3.4: [Backdoor Command Execution (Metasploit)](https://www.exploit-db.com/exploits/17491)
+- MySQL 5.0.x: [Single Row SubSelect Remote Denial of Service](https://www.exploit-db.com/exploits/29724)
+- UnrealIRCd 3.2.8.1: [Backdoor Command Execution (Metasploit)](https://www.exploit-db.com/exploits/16922)
 
 ### Задание 2
 
